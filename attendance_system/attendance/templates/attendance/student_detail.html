@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+</head>
+<body>
+     <h1>Details for {{ student.name }}</h1>
+    <p><strong>ID:</strong> {{ student.student_id }}</p>
+    <p><strong>Status:</strong> {% if student.is_present %} Present {% else %} Absent {% endif %}</p>
+    <p><strong>Date:</strong> {{ student.date }}</p>
+
+    <hr>
+    <a href="{% url 'student_list' %}">Back to List</a> | 
+    <a href="{% url 'student_update' student.pk %}">Edit</a>
+</body>
+</html>

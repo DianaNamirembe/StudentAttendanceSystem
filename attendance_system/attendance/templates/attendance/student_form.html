@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Attendance</title>
+</head>
+<body>
+    <h1>Record Student Attendance</h1>
+    <form method="POST">
+    {% csrf_token %}
+    <label>Student Name:</label><br>
+    <input type="text" name="student_name" value="{{ student.name }}" required><br><br>
+
+    <label>Student ID:</label><br>
+    <input type="text" name="sid" value="{{ student.student_id }}" required><br><br>
+
+    <label>Is Present?</label>
+    <input type="checkbox" name="present"><br><br>
+
+    <label>Date:</label><br>
+    <input type="date" name="attendance_date" value="{{ student.date|date:'Y-m-d' }}" required><br><br>
+
+    <button type="submit">Save Record</button>
+</form>
+</body>
+</html>
